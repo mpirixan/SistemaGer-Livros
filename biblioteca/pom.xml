@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.biblio</groupId>
 	<artifactId>biblioteca</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>biblioteca</name>
 	<description>Demo project for Spring Boot</description>
@@ -64,6 +65,62 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+				<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-java8</artifactId>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.chhsiao90</groupId>
+			<artifactId>modelmapper-module-java8-datatypes</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.kaczmarzyk</groupId>
+			<artifactId>specification-arg-resolver</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		
+		<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>1.5.2</version>
+</dependency>
+
+<dependency>
+ <groupId>org.hibernate</groupId>
+ <artifactId>hibernate-core</artifactId>
+</dependency>
+<dependency>
+<groupId>io.springfox</groupId>
+<artifactId>springfox-swagger2</artifactId>
+<version>2.9.2</version>
+</dependency>
+<dependency>
+<groupId>io.springfox</groupId>
+<artifactId>springfox-swagger-ui</artifactId>
+<version>2.9.2</version>
+<scope>compile</scope>
+</dependency>
+		
+		
+		
 	</dependencies>
 
 	<build>

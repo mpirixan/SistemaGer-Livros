@@ -1,0 +1,21 @@
+spring:
+  profiles.active: dev
+  main.banner-mode: off
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    url: jdbc:postgresql://linux1.brazilsouth.cloudapp.azure.com:5433/biblioteca_db
+    username: springapi
+    password: apiService01
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    database-plataform: org.hibernate.dialect.PostgreSQL94Dialect
+
+
+
+server:
+     port: 8056
+     
+
