@@ -13,7 +13,7 @@ spring:
     hibernate.ddl-auto: update
     database-plataform: org.hibernate.dialect.PostgreSQL94Dialect
 
-springdoc.swagger-ui.path: /swagger-ui.html
+
 
 server:
      port: 8056
