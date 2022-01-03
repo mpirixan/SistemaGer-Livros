@@ -5,9 +5,12 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +30,10 @@ public class Livro {
 	
 	@Column(name="datadecadastro")
 	private LocalDate dataCadastro;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idcliente")
+	private Cliente cliente;
 	
 	public Livro() {
 		
@@ -88,6 +95,14 @@ public class Livro {
 
 	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	
