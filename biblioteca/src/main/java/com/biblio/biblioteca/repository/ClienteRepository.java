@@ -1,9 +1,11 @@
 package com.biblio.biblioteca.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.biblio.biblioteca.domain.model.Cliente;
 
-public interface ClienteRepository extends CrudRepository<Cliente, Long>{
+@Repository
+public interface ClienteRepository extends JpaRepository<Cliente, Long>{
 
 }
