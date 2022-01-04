@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 
 import com.biblio.biblioteca.domain.model.Livro;
 import com.biblio.biblioteca.domain.model.dto.CadastroLivroDTO;
+import com.biblio.biblioteca.domain.model.dto.UpdateLivroDTO;
 import com.biblio.biblioteca.repository.LivroRepository;
 
 @Service
@@ -56,4 +56,21 @@ public class LivroServices {
 	public List<Livro> listarLivros() {
 		return (List<Livro>) repository.findAll();
 	}
+	
+	@Transactional
+	public Livro delete(Long idLivro) {
+		Livro entity = repository.findByIdLivro(idLivro);
+		repository.delete(entity);
+		return null;
+	}
+
+	@Transactional
+	public Livro update(Long idLivro, UpdateLivroDTO obj) {
+		Livro entity = repository.findByIdLivro(idLivro);
+		entity.setAutor(obj.getAutor());
+		entity.setNome(obj.getNome());
+		
+		return repository.save(entity);
+	}
+
 }

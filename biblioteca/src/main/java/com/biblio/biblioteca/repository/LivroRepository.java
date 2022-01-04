@@ -8,6 +8,8 @@ public interface LivroRepository extends JpaRepository<Livro, Long>{
 	
 	public Livro findByNome(String nome);
 	
+	public Livro findByIdLivro(Long idLivro);
+	
 	public Livro findByAutor(String autor);
 	
 /*

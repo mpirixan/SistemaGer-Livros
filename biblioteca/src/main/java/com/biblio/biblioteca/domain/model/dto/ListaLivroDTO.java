@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-public class LivroResponseDTO implements Serializable {
+public class ListaLivroDTO implements Serializable {
 
 	private static final long serialVersionUID = -8330485497989520111L;
 
@@ -27,7 +27,7 @@ public class LivroResponseDTO implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		LivroResponseDTO other = (LivroResponseDTO) obj;
+		ListaLivroDTO other = (ListaLivroDTO) obj;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;

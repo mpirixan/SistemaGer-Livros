@@ -1,16 +1,16 @@
 package com.biblio.biblioteca.domain.model.dto;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-
-public class CadastroLivroDTO  implements Serializable{
+public class UpdateLivroDTO implements Serializable{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1900343600532425449L;
+	private static final long serialVersionUID = 683308644485050816L;
 
 	@Schema(description = "Nome da obra")
 	private String nome;
@@ -18,15 +18,9 @@ public class CadastroLivroDTO  implements Serializable{
 	@Schema(description = "Nome do autor")
 	private String autor;
 
-	@Schema(description = "nome do usuário")
-	private String usuario;
-	
-	
-
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(autor, nome, usuario);
+		return Objects.hash(autor, nome);
 	}
 
 	@Override
@@ -37,9 +31,8 @@ public class CadastroLivroDTO  implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CadastroLivroDTO other = (CadastroLivroDTO) obj;
-		return Objects.equals(autor, other.autor) && Objects.equals(nome, other.nome)
-				&& Objects.equals(usuario, other.usuario);
+		UpdateLivroDTO other = (UpdateLivroDTO) obj;
+		return Objects.equals(autor, other.autor) && Objects.equals(nome, other.nome);
 	}
 
 	public String getNome() {
@@ -58,13 +51,7 @@ public class CadastroLivroDTO  implements Serializable{
 		this.autor = autor;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
 	
 	
 }
