@@ -7,25 +7,25 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
-import com.biblio.biblioteca.domain.model.Cliente;
-import com.biblio.biblioteca.domain.model.dto.CadastroClienteDTO;
-import com.biblio.biblioteca.repository.ClienteRepository;
+import com.biblio.biblioteca.domain.model.Usuario;
+import com.biblio.biblioteca.domain.model.dto.UsuarioClienteDTO;
+import com.biblio.biblioteca.repository.UsuarioRepository;
 
 @Service
 @Validated
-public class ClienteServices {
+public class UsuarioServices {
 	
 	@Autowired
-	private ClienteRepository repository;
+	private UsuarioRepository repository;
 	
-	public List<Cliente> findAll(){
-		return (List<Cliente>) repository.findAll();
+	public List<Usuario> findAll(){
+		return (List<Usuario>) repository.findAll();
 	}
 	
 	
 	@Transactional
-	public Cliente insert(CadastroClienteDTO obj) {
-		Cliente cliente = new Cliente();
+	public Usuario insert(UsuarioClienteDTO obj) {
+		Usuario cliente = new Usuario();
 		cliente.setNome(obj.getNome());
 		cliente.setUsuario(obj.getUsuario());
 		return repository.save(cliente);

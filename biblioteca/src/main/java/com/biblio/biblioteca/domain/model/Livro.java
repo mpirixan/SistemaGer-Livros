@@ -33,7 +33,7 @@ public class Livro {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "usuario", referencedColumnName = "usuario")
-	private Cliente cliente;
+	private Usuario cliente;
 	
 	public Livro() {
 		
@@ -97,11 +97,11 @@ public class Livro {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public Cliente getCliente() {
+	public Usuario getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Usuario cliente) {
 		this.cliente = cliente;
 	}
 

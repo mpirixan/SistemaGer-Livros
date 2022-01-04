@@ -5,7 +5,7 @@ import java.util.Objects;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-public class CadastroClienteDTO implements Serializable{
+public class UsuarioClienteDTO implements Serializable{
 
 	private static final long serialVersionUID = -8330485494789520111L;
 
@@ -28,7 +28,7 @@ public class CadastroClienteDTO implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CadastroClienteDTO other = (CadastroClienteDTO) obj;
+		UsuarioClienteDTO other = (UsuarioClienteDTO) obj;
 		return Objects.equals(nome, other.nome) && Objects.equals(usuario, other.usuario);
 	}
 

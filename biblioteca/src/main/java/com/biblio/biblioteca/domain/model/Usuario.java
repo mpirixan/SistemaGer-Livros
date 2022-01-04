@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Cliente")
-public class Cliente {
+public class Usuario {
 
 	
 	@Column(name="nome")
@@ -21,11 +21,11 @@ public class Cliente {
 	@Column(name="usuario", unique = true)
 	private String usuario;
 	
-	public Cliente() {
+	public Usuario() {
 		
 	}
 
-	public Cliente( String nome, String usuario) {
+	public Usuario( String nome, String usuario) {
 		super();
 		this.nome = nome;
 		this.usuario = usuario;

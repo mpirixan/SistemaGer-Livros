@@ -12,31 +12,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblio.biblioteca.controllers.services.ClienteServices;
-import com.biblio.biblioteca.domain.model.Cliente;
-import com.biblio.biblioteca.domain.model.dto.CadastroClienteDTO;
+import com.biblio.biblioteca.controllers.services.UsuarioServices;
+import com.biblio.biblioteca.domain.model.Usuario;
+import com.biblio.biblioteca.domain.model.dto.UsuarioClienteDTO;
 
 import io.swagger.annotations.Api;
 @CrossOrigin(origins = "http://127.0.0.1:3000")
 @RestController
 @Api
 @RequestMapping(value="/serviços-cliente")
-public class ClienteController {
+public class UsuarioController {
 
 	@Autowired
 	private ModelMapper modelMapper;
 	
 	@Autowired
-	private ClienteServices services;
+	private UsuarioServices services;
 	
 	@GetMapping
-	public ResponseEntity<List<Cliente>> findAll(){
-		List<Cliente> list = services.findAll();
+	public ResponseEntity<List<Usuario>> findAll(){
+		List<Usuario> list = services.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@PostMapping(value = "/cadastro-usuario")
-	public CadastroClienteDTO insert(@RequestBody CadastroClienteDTO obj) {
-		return modelMapper.map(services.insert(obj),CadastroClienteDTO.class);
+	public UsuarioClienteDTO insert(@RequestBody UsuarioClienteDTO obj) {
+		return modelMapper.map(services.insert(obj),UsuarioClienteDTO.class);
 	}
 }
