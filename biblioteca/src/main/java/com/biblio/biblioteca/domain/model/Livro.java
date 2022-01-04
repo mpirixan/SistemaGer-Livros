@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class Livro {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="idlivro")
 	private Long idLivro;
 	
@@ -32,7 +32,7 @@ public class Livro {
 	private LocalDate dataCadastro;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idcliente")
+	@JoinColumn(name = "usuario", referencedColumnName = "usuario")
 	private Cliente cliente;
 	
 	public Livro() {

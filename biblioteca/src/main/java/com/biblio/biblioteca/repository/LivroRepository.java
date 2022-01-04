@@ -1,15 +1,18 @@
 package com.biblio.biblioteca.repository;
 
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.biblio.biblioteca.domain.model.Livro;
 
-public interface LivroRepository extends CrudRepository<Livro, Long>{
-
-	@Modifying
-	@Query("insert into livro l  c.saldo = c.saldo + ?1 where c.idConta = ?2")
-	void insereUsuario(String usuario);
+public interface LivroRepository extends JpaRepository<Livro, Long>{
 	
+	public Livro findByNome(String nome);
+	
+	public Livro findByAutor(String autor);
+	
+/*
+	@Modifying
+	@Query("INSERT INTO livro (nome, autor,datadecadastro,usuario) VALUES (?,?,?,?)")
+	void insereUsuario(String usuario);
+	*/
 }
