@@ -6,6 +6,10 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.token.TokenService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +35,13 @@ import io.swagger.annotations.Api;
 public class LivroController {
 
 	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private TokenService tokenService;
+	
+	
+	@Autowired
 	private ModelMapper modelMapper;
 	
 	@Autowired
@@ -54,8 +65,8 @@ public class LivroController {
 	
 	
 	@DeleteMapping(value="/desativacao/{idLivro}")
-	public void delete(@PathVariable("idLivro") Long idLivro) { 
-		 services.delete(idLivro);
+	public void delete(@PathVariable("idLivro") Long idLivro) {
+		services.delete(idLivro);
 	}
 	
 	@PatchMapping(value="/atualizacao/{idLivro}")

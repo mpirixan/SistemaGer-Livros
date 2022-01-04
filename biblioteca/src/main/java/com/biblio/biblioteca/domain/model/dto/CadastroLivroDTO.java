@@ -2,6 +2,9 @@ package com.biblio.biblioteca.domain.model.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
@@ -12,12 +15,18 @@ public class CadastroLivroDTO  implements Serializable{
 	 */
 	private static final long serialVersionUID = 1900343600532425449L;
 
+    @NotNull
+    @NotEmpty
 	@Schema(description = "Nome da obra")
 	private String nome;
-	
+
+    @NotNull
+    @NotEmpty
 	@Schema(description = "Nome do autor")
 	private String autor;
 
+    @NotNull
+    @NotEmpty
 	@Schema(description = "nome do usuário")
 	private String usuario;
 	

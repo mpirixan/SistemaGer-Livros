@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.biblio.biblioteca.controllers.services.UsuarioServices;
 import com.biblio.biblioteca.domain.model.Usuario;
-import com.biblio.biblioteca.domain.model.dto.UsuarioClienteDTO;
+import com.biblio.biblioteca.domain.model.dto.UsuarioDTO;
 
 import io.swagger.annotations.Api;
 @CrossOrigin(origins = "http://127.0.0.1:3000")
@@ -36,7 +36,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping(value = "/cadastro-usuario")
-	public UsuarioClienteDTO insert(@RequestBody UsuarioClienteDTO obj) {
-		return modelMapper.map(services.insert(obj),UsuarioClienteDTO.class);
+	public UsuarioDTO insert(@RequestBody UsuarioDTO obj) {
+		return modelMapper.map(services.insert(obj),UsuarioDTO.class);
 	}
 }
