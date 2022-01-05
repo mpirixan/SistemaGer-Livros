@@ -31,25 +31,25 @@ public class Livro {
 	@Column(name="datadecadastro")
 	private LocalDate dataCadastro;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "usuario", referencedColumnName = "usuario")
-	private Usuario usuario;
+	@Column(name = "usuariodono")
+	private String usuarioDono;
 	
 	public Livro() {
 		
 	}
 
-	public Livro(Long idLivro, String nome, String autor, LocalDate dataCadastro) {
+	public Livro(Long idLivro, String nome, String autor, LocalDate dataCadastro, String usuarioDono) {
 		super();
 		this.idLivro = idLivro;
 		this.nome = nome;
 		this.autor = autor;
 		this.dataCadastro = dataCadastro;
+		this.usuarioDono = usuarioDono;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(autor, dataCadastro, idLivro, nome);
+		return Objects.hash(autor, dataCadastro, idLivro, nome, usuarioDono);
 	}
 
 	@Override
@@ -62,7 +62,8 @@ public class Livro {
 			return false;
 		Livro other = (Livro) obj;
 		return Objects.equals(autor, other.autor) && Objects.equals(dataCadastro, other.dataCadastro)
-				&& Objects.equals(idLivro, other.idLivro) && Objects.equals(nome, other.nome);
+				&& Objects.equals(idLivro, other.idLivro) && Objects.equals(nome, other.nome)
+				&& Objects.equals(usuarioDono, other.usuarioDono);
 	}
 
 	public Long getIdLivro() {
@@ -97,13 +98,14 @@ public class Livro {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public String getUsuarioDono() {
+		return usuarioDono;
 	}
 
-	public void setUsuario(Usuario cliente) {
-		this.usuario = cliente;
+	public void setUsuarioDono(String usuarioDono) {
+		this.usuarioDono = usuarioDono;
 	}
+
 
 	
 }

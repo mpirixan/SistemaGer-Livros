@@ -28,14 +28,14 @@ public class CadastroLivroDTO  implements Serializable{
     @NotNull
     @NotEmpty
 	@Schema(description = "nome do usuário")
-	private String usuario;
+	private String usuarioDono;
 	
 	
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(autor, nome, usuario);
+		return Objects.hash(autor, nome, usuarioDono);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class CadastroLivroDTO  implements Serializable{
 			return false;
 		CadastroLivroDTO other = (CadastroLivroDTO) obj;
 		return Objects.equals(autor, other.autor) && Objects.equals(nome, other.nome)
-				&& Objects.equals(usuario, other.usuario);
+				&& Objects.equals(usuarioDono, other.usuarioDono);
 	}
 
 	public String getNome() {
@@ -67,12 +67,12 @@ public class CadastroLivroDTO  implements Serializable{
 		this.autor = autor;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public String getUsuarioDono() {
+		return usuarioDono;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setUsuarioDono(String usuarioDono) {
+		this.usuarioDono = usuarioDono;
 	}
 	
 	

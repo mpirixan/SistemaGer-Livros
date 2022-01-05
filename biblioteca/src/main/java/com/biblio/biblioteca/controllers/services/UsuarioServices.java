@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
-import com.biblio.biblioteca.SecurityConfiguration;
 import com.biblio.biblioteca.domain.model.Usuario;
 import com.biblio.biblioteca.domain.model.dto.UsuarioDTO;
 import com.biblio.biblioteca.repository.UsuarioRepository;
@@ -15,10 +14,7 @@ import com.biblio.biblioteca.repository.UsuarioRepository;
 @Service
 @Validated
 public class UsuarioServices {
-	
-	@Autowired
-	SecurityConfiguration secuConfig;
-	
+
 	@Autowired
 	private UsuarioRepository repository;
 	
@@ -26,13 +22,13 @@ public class UsuarioServices {
 		return (List<Usuario>) repository.findAll();
 	}
 	
-	
 	@Transactional
 	public Usuario insert(UsuarioDTO obj) {
 		Usuario cliente = new Usuario();
 		cliente.setNome(obj.getNome());
-		cliente.setUsuario(obj.getUsuario());
-		
+		cliente.setApelidoUsuario(obj.getApelidoUsuario());
+		cliente.setPassword(obj.getPassword());
+		cliente.setEmail(obj.getEmail());;
 		return repository.save(cliente);
 	}
 }
