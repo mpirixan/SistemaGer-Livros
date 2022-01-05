@@ -34,11 +34,6 @@ import io.swagger.annotations.Api;
 @RequestMapping(value="/serviços-livros")
 public class LivroController {
 
-	@Autowired
-	private AuthenticationManager authenticationManager;
-	
-	@Autowired
-	private TokenService tokenService;
 	
 	
 	@Autowired
