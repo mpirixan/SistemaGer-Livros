@@ -1,29 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Busca from '../views/Busca.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('../views/Menu.vue')
+    name: 'Login',
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/Cadastros',
     name: 'Cadastros',
     component: () => import('../views/Cadastros.vue')
-  },
-  {
-    path: '/Cadastros',
-    name: 'Cadastros',
-    component: () => import('../views/Login.vue')
-  },
-  {
-    path: '/Busca',
-    name: 'Busca',
-    component: Busca
   }
 ]
 

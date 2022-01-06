@@ -8,7 +8,7 @@
   </div>
   <div class="home">
       <router-link to="/" custom v-slot="{ navigate }">
-        <button @click="navigate" @keypress.enter="navigate" role="link">Home</button>
+        <button @click="navigate" @keypress.enter="navigate" role="link">Login</button>
       </router-link>
   </div>
 </div>

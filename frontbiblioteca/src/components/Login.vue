@@ -8,7 +8,7 @@
                     <input type="password" id="senha" placeholder="senha"/>
                   <div class="grid-item">
                       <div id="cadastro">
-                        <button v-on:click="cadastro()">Cadastro</button>
+                        <button v-on:click="cadastro()">Login</button>
                       </div>
                   </div>
               </div>
@@ -16,7 +16,7 @@
     </div>
 </template>
 <script>
-function cadastro () {
+function login () {
   const axios = require('axios').default
   var email = document.getElementById('email').value
   var senha = document.getElementById('senha').value
@@ -37,8 +37,8 @@ function cadastro () {
 
 export default {
   methods: {
-    cadastro () {
-      cadastro()
+    login () {
+      login()
     }
   }
 
@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../styles/cadastros.styl'
+@import '../styles/login.styl'
 </style>

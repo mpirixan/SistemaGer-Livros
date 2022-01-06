@@ -6,17 +6,17 @@
   <div class="Login">
     <Login msg="Login"/>
   </div>
-    <div class="home">
-      <router-link to="/" custom v-slot="{ navigate }">
-        <button @click="navigate" @keypress.enter="navigate" role="link">Home</button>
-      </router-link>
+    <div class="cadastro">
+        <router-link to="/Cadastros" custom v-slot="{ navigate }">
+            <button @click="navigate" @keypress.enter="navigate" role="link">Cadastros</button>
+        </router-link>
+
   </div>
 </div>
 </template>
 <script>
 import Login from '../components/Login.vue'
 export default {
-  name: 'Login',
   components: {
     Login
   }
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../styles/cadastros.styl'
+@import '../styles/login.styl'
 .container {
   display: inline-grid
   grid-template-columns: 1fr 1fr
@@ -37,7 +37,7 @@ export default {
   grid-template-areas:
     "title title"\
     "Login Login"\
-    "home home"
+    "cadastro cadastro"
 }
 
 .title {
@@ -45,11 +45,8 @@ export default {
     grid-area: title
     margin: 20px }
 
-.cadastroPe {
-    grid-area: cadastroPe }
-
-.cadastroCo {
-    grid-area: cadastroCo }
+.Login {
+    grid-area: Login }
 
 .Submit1 {
     grid-area: Submit1 }
@@ -57,7 +54,7 @@ export default {
 .Submit2 {
     grid-area: Submit2 }
 
-.home {
+.cadrasto {
 
   justify-self: center
   align-self: center
