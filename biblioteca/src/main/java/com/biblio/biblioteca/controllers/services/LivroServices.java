@@ -42,15 +42,15 @@ public class LivroServices {
 	
 	@Transactional
 	public Livro insert(CadastroLivroDTO obj) {
- em.createNativeQuery("INSERT INTO livro (nome, autor,datadecadastro,usuariodono) VALUES (?,?,?,?)")
-			.setParameter(1, obj.getNome())
-			.setParameter(2, obj.getAutor())
-			.setParameter(3, LocalDate.now())
-			.setParameter(4, obj.getUsuarioDono())
-			.executeUpdate();
-	Livro livro = new Livro(); 
-	livro = repository.findByNome(obj.getNome());
-	return livro; 
+		Livro livro = new Livro(); 
+			livro.setNome(obj.getNome());
+			livro.setAutor(obj.getAutor());
+			livro.setDataCadastro(LocalDate.now());
+			livro.setUsuarioDono(obj.getUsuarioDono());
+
+	
+
+	return repository.save(livro); 
 	}
 	
 	public List<Livro> listarLivros() {
