@@ -5,6 +5,7 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping(value = "/cadastro-usuario")
+	@PreAuthorize("hasRole('ADMIN')")
 	public UsuarioDTO insert(@RequestBody UsuarioDTO obj) {
 		return modelMapper.map(services.insert(obj),UsuarioDTO.class);
 	}
