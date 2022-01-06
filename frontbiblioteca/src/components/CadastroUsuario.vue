@@ -1,5 +1,5 @@
 <template>
-    <div class="cadastroPessoas">
+    <div class="cadastroUsuario">
         <h2>Cadastrar Usuário</h2>
               <div class="grid-container">
                   <div class="grid-inputs">

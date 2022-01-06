@@ -4,7 +4,7 @@
     <h1>Cadastro no Sistema</h1>
   </div>
   <div class="cadastroPe">
-    <Cadastro-pe msg="Cadastro de Usuários"/>
+    <CadastroUsuario msg="Cadastro de Usuários"/>
   </div>
   <div class="home">
       <router-link to="/" custom v-slot="{ navigate }">
@@ -14,10 +14,10 @@
 </div>
 </template>
 <script>
-import CadastroPe from '../components/CadastroPe.vue'
+import CadastroUsuario from '../components/CadastroUsuario.vue'
 export default {
   components: {
-    CadastroPe
+    CadastroUsuario
 
   }
 }
@@ -36,7 +36,7 @@ export default {
   grid-auto-flow: row
   grid-template-areas:
     "title title"\
-    "cadastroPe cadastroPe"\
+    "cadastroUser cadastroUser"\
     "home home"
 }
 
@@ -45,11 +45,8 @@ export default {
     grid-area: title
     margin: 20px }
 
-.cadastroPe {
+.cadastroUser {
     grid-area: cadastroPe }
-
-.cadastroCo {
-    grid-area: cadastroCo }
 
 .Submit1 {
     grid-area: Submit1 }

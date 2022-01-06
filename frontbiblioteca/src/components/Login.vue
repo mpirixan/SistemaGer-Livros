@@ -1,7 +1,6 @@
 <template>
     <div class="login">
         <h1>LOGIN</h1>
-        <h2>Cadastrar Pessoas</h2>
               <div class="grid-container">
                   <div class="grid-inputs">
                     <input type="email" id="email" placeholder="email"  />
