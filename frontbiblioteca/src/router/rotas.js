@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import CadastroPe from '../views/CadastroPessoas.vue'
 import Busca from '../views/Busca.vue'
 
 Vue.use(VueRouter)
@@ -8,20 +10,15 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Menu.vue')
+    component: Home
   },
   {
-    path: '/Cadastros',
-    name: 'Cadastros',
-    component: () => import('../views/Cadastros.vue')
+    path: '/Cadastro',
+    name: 'Cadastro',
+    component: CadastroPe
   },
   {
-    path: '/Cadastros',
-    name: 'Cadastros',
-    component: () => import('../views/Login.vue')
-  },
-  {
-    path: '/Busca',
+    path: '/busca',
     name: 'Busca',
     component: Busca
   }
