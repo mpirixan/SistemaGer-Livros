@@ -1,2 +1,2 @@
 # SistemaGer-Livros
-Pequeno sistema de gerenciamento de Livro usando Spring e Angular.js
+Pequeno sistema de gerenciamento de Livro usando Spring e Vue.js
