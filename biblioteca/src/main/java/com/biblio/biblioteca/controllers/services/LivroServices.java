@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
+import com.biblio.biblioteca.controllers.services.excecoes.ResourceNotFoundException;
 import com.biblio.biblioteca.domain.model.Livro;
 import com.biblio.biblioteca.domain.model.dto.CadastroLivroDTO;
 import com.biblio.biblioteca.domain.model.dto.UpdateLivroDTO;
@@ -57,6 +58,9 @@ public class LivroServices {
 	@Transactional
 	public Livro delete(Long idLivro) {
 		Livro entity = repository.findByIdLivro(idLivro);
+		if (entity == null) {
+			throw new ResourceNotFoundException("Elemento não encontrado. Livro de identidade: " + idLivro);
+		}
 		repository.delete(entity);
 		return null;
 	}
@@ -64,6 +68,9 @@ public class LivroServices {
 	@Transactional
 	public Livro update(Long idLivro, UpdateLivroDTO obj) {
 		Livro entity = repository.findByIdLivro(idLivro);
+		if (entity == null) {
+			throw new ResourceNotFoundException("Elemento não encontrado. Livro de Identidade: " + idLivro);
+		}
 		entity.setAutor(obj.getAutor());
 		entity.setNome(obj.getNome());
 		entity.setDataCadastro(LocalDate.now());
