@@ -1,5 +1,6 @@
 package com.biblio.biblioteca.controllers;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.biblio.biblioteca.controllers.services.UsuarioServices;
 import com.biblio.biblioteca.domain.model.Usuario;
+import com.biblio.biblioteca.domain.model.dto.CadastroUsuarioDTO;
 import com.biblio.biblioteca.domain.model.dto.UsuarioDTO;
 
 import io.swagger.annotations.Api;
@@ -29,14 +31,13 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioServices services;
 	
-	@GetMapping
-	public ResponseEntity<List<Usuario>> findAll(){
-		List<Usuario> list = services.findAll();
-		return ResponseEntity.ok().body(list);
+	@GetMapping(value="lista-usuarios")
+	public List<UsuarioDTO> listarLivros(){
+		return Arrays.asList(modelMapper.map(services.findAll(), UsuarioDTO[].class));
 	}
 	
 	@PostMapping(value = "/cadastro-usuario")
-	public UsuarioDTO insert(@RequestBody UsuarioDTO obj) {
-		return modelMapper.map(services.insert(obj),UsuarioDTO.class);
+	public CadastroUsuarioDTO insert(@RequestBody CadastroUsuarioDTO obj) {
+		return modelMapper.map(services.insert(obj),CadastroUsuarioDTO.class);
 	}
 }

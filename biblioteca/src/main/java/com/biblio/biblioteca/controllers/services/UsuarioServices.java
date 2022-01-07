@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import java.util.Base64;
 import com.biblio.biblioteca.domain.model.Usuario;
-import com.biblio.biblioteca.domain.model.dto.UsuarioDTO;
+import com.biblio.biblioteca.domain.model.dto.CadastroUsuarioDTO;
 import com.biblio.biblioteca.repository.UsuarioRepository;
 
 @Service
@@ -25,7 +25,7 @@ public class UsuarioServices {
 	}
 	
 	@Transactional
-	public Usuario insert(UsuarioDTO obj) {
+	public Usuario insert(CadastroUsuarioDTO obj) {
 		Usuario cliente = new Usuario();
 		cliente.setNome(obj.getNome());
 		cliente.setApelidoUsuario(obj.getApelidoUsuario());

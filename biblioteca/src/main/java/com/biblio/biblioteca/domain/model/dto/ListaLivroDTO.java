@@ -1,6 +1,7 @@
 package com.biblio.biblioteca.domain.model.dto;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -8,15 +9,17 @@ public class ListaLivroDTO implements Serializable {
 
 	private static final long serialVersionUID = -8330485497989520111L;
 
+	@Schema(description = "Id livro")
+	private Long idLivro;
+	
 	@Schema(description = "Nome do Livro")
 	private String nome;
 
+
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		return result;
+		return Objects.hash(idLivro, nome);
 	}
 
 	@Override
@@ -28,12 +31,7 @@ public class ListaLivroDTO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		ListaLivroDTO other = (ListaLivroDTO) obj;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		return true;
+		return Objects.equals(idLivro, other.idLivro) && Objects.equals(nome, other.nome);
 	}
 
 	public String getNome() {
@@ -42,6 +40,14 @@ public class ListaLivroDTO implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Long getIdLivro() {
+		return idLivro;
+	}
+
+	public void setIdLivro(Long idLivro) {
+		this.idLivro = idLivro;
 	}
 	
 	

@@ -5,25 +5,25 @@ import java.util.Objects;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-public class UsuarioDTO implements Serializable{
+public class CadastroUsuarioDTO implements Serializable{
 
-	private static final long serialVersionUID = 596872047721215402L;
+	private static final long serialVersionUID = -8330485494789520111L;
 
-	@Schema(description = "Id usuário")
-	private Long idUsuario;
-	
 	@Schema(description = "Nome do cliente")
 	private String nome;
 	
 	@Schema(description = "Usuário único do sistema")
 	private String apelidoUsuario;
+	
+	@Schema(description = "Senha criada pelo usuario")
+	private String password;
 
 	@Schema(description = "Email do usuário")
 	private String email;
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(apelidoUsuario, email, idUsuario, nome);
+		return Objects.hash(apelidoUsuario, email, nome, password);
 	}
 
 	@Override
@@ -34,17 +34,9 @@ public class UsuarioDTO implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UsuarioDTO other = (UsuarioDTO) obj;
+		CadastroUsuarioDTO other = (CadastroUsuarioDTO) obj;
 		return Objects.equals(apelidoUsuario, other.apelidoUsuario) && Objects.equals(email, other.email)
-				&& Objects.equals(idUsuario, other.idUsuario) && Objects.equals(nome, other.nome);
-	}
-
-	public Long getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
+				&& Objects.equals(nome, other.nome) && Objects.equals(password, other.password);
 	}
 
 	public String getNome() {
@@ -63,6 +55,14 @@ public class UsuarioDTO implements Serializable{
 		this.apelidoUsuario = apelidoUsuario;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -73,4 +73,5 @@ public class UsuarioDTO implements Serializable{
 	
 	
 	
+
 }

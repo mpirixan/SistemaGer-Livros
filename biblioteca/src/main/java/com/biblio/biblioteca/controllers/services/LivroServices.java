@@ -26,9 +26,6 @@ public class LivroServices {
 	@Autowired
 	private LivroRepository repository;
 	
-	public List<Livro> findAll(){
-		return (List<Livro>) repository.findAll();
-	}
 	/*
 	@Transactional
 	public Livro insert(CadastroLivroDTO obj) {

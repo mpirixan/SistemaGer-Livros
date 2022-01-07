@@ -38,11 +38,6 @@ public class LivroController {
 	@Autowired
 	private LivroServices services;
 	
-	@GetMapping
-	public ResponseEntity<List<Livro>> findAll(){
-		List<Livro> list = services.findAll();
-		return ResponseEntity.ok().body(list);
-	}
 	
 	@PostMapping(value = "/cadastro-livro")
 	public CadastroLivroDTO insert(@RequestBody CadastroLivroDTO obj) {
