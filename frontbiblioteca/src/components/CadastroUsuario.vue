@@ -3,22 +3,10 @@
         <h2>Cadastrar Usuário</h2>
               <div class="grid-container">
                   <div class="grid-inputs">
-                    <input type="number" id="idFiscal" placeholder="CPF/CNPJ"  />
                     <input type="text" id="nome" placeholder="NOME COMPLETO"/>
-                    <input v-model="data"
-                          onfocus="(this.type='date')"
-                          onblur="(this.type='text')" id="dataNasc" placeholder="Data Nascimento"/>
-                    <select id="tipoPessoa" style="width:200px">
-                      <option value="FISICA"> Física</option>
-                      <option value="JURIDICA">Jurídica</option>
-                    </select>
-                      <select id="estadoCivil" placeholder="Estado Civil">
-                          <option value="SOLTERO">Solteiro(a)</option>
-                          <option value="CASADO">Casado(a)</option>
-                          <option value="UNIAOESTAVEL">União Estável</option>
-                          <option value="VIUVO">Viúvo(a)</option>
-                          <option value="DIVORCIADO">Divorciado(a)</option>
-                      </select>
+                    <input type="text" id="apelido" placeholder="APELIDO"  />
+                    <input type="password" id="senha" placeholder="SENHA"/>
+                    <input type="email" id="email" placeholder="EMAIL"/>
                   </div>
                   <div class="grid-item">
                       <div id="cadastro">
@@ -32,19 +20,17 @@
 <script>
 function cadastro () {
   const axios = require('axios').default
-  var idFiscal = document.getElementById('idFiscal').value
   var nome = document.getElementById('nome').value
-  var dataNasc = document.getElementById('dataNasc').value
-  var tipoPessoa = document.getElementById('tipoPessoa').value
-  var estadoCivil = document.getElementById('estadoCivil').value
+  var apelido = document.getElementById('apelido').value
+  var senha = document.getElementById('senha').value
+  var email = document.getElementById('email').value
 
   dataNasc = String(dataNasc)
-  axios.post('http://191.232.183.250:8090/api/v1/pessoas/cadastro', {
-    idFiscal: idFiscal,
+  axios.post('http://localhost:8056/serviços-cliente/cadastro-usuario', {
     nome: nome,
-    dataNascimento: dataNasc,
-    tipoPessoa: tipoPessoa,
-    estadoCivil: estadoCivil
+    apelido: apelido,
+    senha: senha,
+    email: email
   })
     .then(function (response) {
       console.log(response)

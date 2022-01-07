@@ -20,7 +20,7 @@ function login () {
   var email = document.getElementById('email').value
   var senha = document.getElementById('senha').value
 
-  axios.get('http://localhost:8080/api/v1/contas/cadastro/', {
+  axios.get('http://localhost:8056/serviços-cliente/', {
     email: email,
     senha: senha
   })

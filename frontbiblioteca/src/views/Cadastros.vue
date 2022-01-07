@@ -3,7 +3,7 @@
   <div class="title">
     <h1>Cadastro no Sistema</h1>
   </div>
-  <div class="cadastroPe">
+  <div class="cadastroUser">
     <CadastroUsuario msg="Cadastro de Usuários"/>
   </div>
   <div class="home">
@@ -46,7 +46,7 @@ export default {
     margin: 20px }
 
 .cadastroUser {
-    grid-area: cadastroPe }
+    grid-area: cadastroUser }
 
 .Submit1 {
     grid-area: Submit1 }
